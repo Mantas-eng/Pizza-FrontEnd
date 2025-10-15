@@ -1803,8 +1803,7 @@ header .logo-img {
   color: white;
   font-size: 24px;
   cursor: pointer;
-  z-index: 1100;
-  position: fixed;
+  z-index: 1222;
 }
 
 .bottom-nav {
@@ -1840,6 +1839,8 @@ nav {
   padding: 10px;
   position: fixed;
   width: 100%;
+  /* ensure the nav (and hamburger) sits above header background on small screens */
+  z-index: 10001;
   transition: all 0.5s ease-in-out;
 }
 nav.scrolled {
@@ -2042,6 +2043,7 @@ img {
     padding: 10px 0;
     text-align: center;
     box-sizing: border-box;
+    z-index: 900;
   }
   .nav-link li {
     width: 100%;
@@ -2087,6 +2089,8 @@ img {
     left: 0;
     top: 0;
     margin: 10px;
+    display: block;
+    z-index: 10002;
   }
   .favorite_pizzas {
     display: flex;

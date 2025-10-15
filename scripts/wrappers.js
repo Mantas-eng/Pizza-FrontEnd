@@ -29,7 +29,7 @@ async function fetchWraps() {
             <button class="add-to-cart" data-id="${wrap._id}" data-name="${
           wrap.name
         }" data-price="${wrap.price}" data-image="${wrap.image}">
-              ➕ Buy
+              Buy
             </button>
           </div>
         </div>

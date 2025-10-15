@@ -1,21 +1,13 @@
-function toggleMenu() {
-  const navLinks = document.querySelector(".nav-link");
-  navLinks.classList.toggle("active");
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Rodyti intro tik vieną kartą
   if (!localStorage.getItem("pizzaShown")) {
     const container = document.querySelector(".container");
     if (container) container.classList.add("show");
     localStorage.setItem("pizzaShown", "true");
   }
 
-  // Atnaujinti krepšelio skaičių
   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
   updateCartCount(cart);
 
-  // Scroll animacijos
   const hiddenElements = document.querySelectorAll(".hidden");
   const observer = new IntersectionObserver(
     (entries) => {
@@ -30,22 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   hiddenElements.forEach((el) => observer.observe(el));
 
-  // Picos
   fetchPizzas();
 
-  // 🛒 Kai paspaudi ant bet kurio „cart“ elemento – atveria checkout.html
-  const cartCount = document.getElementById("cart-count");
-  const cartIcon =
-    document.querySelector(".cart-icon") || document.querySelector("#cart"); // gali būti .cart-icon arba #cart
-  if (cartCount) {
-    cartCount.style.cursor = "pointer";
-    cartCount.addEventListener("click", () => {
-      window.location.href = "/checkout.html";
-    });
-  }
-  if (cartIcon) {
-    cartIcon.style.cursor = "pointer";
-    cartIcon.addEventListener("click", () => {
+  const cartBtn = document.getElementById("cart-btn");
+  if (cartBtn) {
+    cartBtn.addEventListener("click", () => {
       window.location.href = "/checkout.html";
     });
   }
@@ -85,16 +66,14 @@ function fetchPizzas() {
         if (list) list.innerHTML = "";
       });
 
-      // 🧩 Normalizuojam kainas
       data
         .filter((pizza) => ["1", "2", "3", "4", "5"].includes(pizza.id))
         .forEach((pizza, index) => {
           const list = pizzaLists[index];
           if (list) {
-            // Jei kaina per didelė ar nėra – priskirti atsitiktinę normalią kainą
             let price = parseFloat(pizza.price);
             if (isNaN(price) || price > 50) {
-              price = (8 + Math.random() * 7).toFixed(2); // 8.00–15.00 €
+              price = (8 + Math.random() * 7).toFixed(2);
             }
 
             const pizzaElement = document.createElement("div");

@@ -29,7 +29,7 @@ async function fetchDrinks() {
             <button class="add-to-cart" data-id="${drink._id}" data-name="${
           drink.name
         }" data-price="${drink.price}" data-image="${drink.image}">
-              ➕ Buy
+               Buy
             </button>
           </div>
         </div>

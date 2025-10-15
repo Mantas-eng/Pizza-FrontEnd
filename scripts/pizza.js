@@ -27,7 +27,7 @@ async function fetchPizzas() {
           <button class="add-to-cart" data-id="${pizza._id}" data-name="${
           pizza.name
         }" data-price="${pizza.price}" data-image="${pizza.image}">
-            ➕ Buy
+            Buy
           </button>
         </div>
       </div>

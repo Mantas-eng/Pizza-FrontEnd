@@ -19,22 +19,22 @@ async function fetchSpecials() {
     container.innerHTML = specials
       .map(
         (s, index) => `
-        <div class="special-card">
-          <div class="special-img-wrap">
-            <img src="${
-              s.image ||
-              "https://thumbs.dreamstime.com/b/shawarma-wrap-fries-soda-can-served-as-fast-food-combo-black-reflective-background-meal-crispy-french-paper-bag-377913399.jpg"
-            }" alt="${s.title}" class="special-img">
-          </div>
-          <div class="special-info">
-            <h3>${s.title}</h3>
-            <p>${s.description}</p>
-            <span class="badge">${
-              s.discount ? `-${s.discount}%` : "Pasiūlymas"
-            }</span>
-            <button class="add-combo" data-index="${index}">Pridėti Combo</button>
-          </div>
+      <div class="special-card">
+        <div class="special-img-wrap">
+        <img src="${
+          s.image ||
+          "https://thumbs.dreamstime.com/b/shawarma-wrap-fries-soda-can-served-as-fast-food-combo-black-reflective-background-meal-crispy-french-paper-bag-377913399.jpg"
+        }" alt="${s.title}" class="special-img">
         </div>
+        <div class="special-info">
+        <h3>${s.title}</h3>
+        <p>${s.description}</p>
+        <span class="badge">${
+          s.discount ? `-${s.discount}%` : "Pasiūlymas"
+        }</span>
+        <button class="add-combo" data-index="${index}" style="margin-top: 1rem; background: #FF5733; border: none; color: #fff; padding: 1rem 2rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: background 0.2s ease;">Buy</button>
+        </div>
+      </div>
       `
       )
       .join("");
