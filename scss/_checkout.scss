@@ -1,0 +1,221 @@
+.checkout-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+    }
+
+    .checkout-content {
+        display: flex;
+        gap: 40px;
+
+        .checkout-left {
+            flex: 2;
+
+            .cart-items {
+                background: #f9f9f9;
+                padding: 20px;
+                border-radius: 12px;
+
+                .cart-item {
+                    display: flex;
+                    gap: 15px;
+                    margin-bottom: 15px;
+
+                    img {
+                        width: 60px;
+                        border-radius: 8px;
+                    }
+
+                    h4 {
+                        margin: 0;
+                        font-size: 16px;
+                    }
+
+                    p {
+                        margin: 5px 0 0;
+                        color: #555;
+                    }
+                }
+            }
+
+            .upsell {
+                margin-top: 2rem;
+                padding: 1rem;
+                background: #f7f7f7;
+                border-radius: 12px;
+
+                h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                    color: #333;
+                }
+
+                .upsell-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: #fff;
+                    border-radius: 12px;
+                    padding: 12px 20px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                    transition: all 0.2s ease-in-out;
+                    margin-bottom: 12px;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+                    }
+
+                    img {
+                        width: 50px;
+                        height: auto;
+                        border-radius: 8px;
+                        margin-right: 16px;
+                    }
+
+                    .upsell-text {
+                        flex: 1;
+
+                        .upsell-question {
+                            font-size: 14px;
+                            color: #444;
+                            margin: 0;
+                        }
+
+                        h4 {
+                            font-weight: 600;
+                            margin: 4px 0 2px;
+                        }
+
+                        .upsell-price {
+                            font-size: 15px;
+                            color: #333;
+                            margin: 0;
+                        }
+                    }
+
+                    .upsell-add-btn {
+                        background: white;
+                        color: #c49a00;
+                        border: 1.5px solid #c49a00;
+                        border-radius: 20px;
+                        padding: 6px 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+
+                        &:hover {
+                            background: #c49a00;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkout-right {
+            flex: 2;
+
+            .billing-form {
+                background: #fff;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    font-size: 20px;
+                }
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 15px;
+
+                    label {
+                        margin-bottom: 5px;
+                        font-weight: 600;
+                    }
+
+                    input {
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        font-size: 14px;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #c8102e;
+                            box-shadow: 0 0 3px #c8102e;
+                        }
+                    }
+                }
+            }
+
+            /* 🧾 UŽSAKYMO SUVESTINĖ */
+            .order-summary {
+                background: #fff;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+                margin-top: 20px;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    font-size: 20px;
+                }
+
+                .summary-details {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                .checkout-btn {
+                    width: 100%;
+                    background: #c8102e;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: 0.2s;
+
+                    &:hover {
+                        background: #a10e26;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        .checkout-content {
+            flex-direction: column;
+
+            .upsell-item {
+                flex-direction: column;
+                text-align: center;
+
+                img {
+                    margin-bottom: 8px;
+                }
+
+                .upsell-add-btn {
+                    margin-top: 8px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

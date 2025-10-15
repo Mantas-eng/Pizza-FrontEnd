@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Pizza Shop</title>
+    <link rel="stylesheet" href="/scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="/index.html" class="logo">
+          <img
+            class="logo-img"
+            src="./img/ChatGPT_Image_Oct_10__2025__11_02_44_PM-removebg-preview.png"
+            alt="pizza-logo"
+            width="200"
+          />
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-link">
+          <li><a href="contact-us.html">Kontaktai</a></li>
+          <li><a href="/news.html">Aktualijos</a></li>
+          <li><a href="/career.html">Karjera</a></li>
+          <li><a href="/information.html">Informacija</a></li>
+          <li><a href="/about-us.html">Apie mus</a></li>
+        </ul>
+        <div class="action-buttons">
+          <button id="cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-count">0</span>
+          </button>
+          <button><i class="fas fa-bell"></i></button>
+        </div>
+      </nav>
+
+      <div class="bottom-nav">
+        <ul class="bottom-nav-items">
+          <li>
+            <a href="#specials">
+              <i class="fas fa-percentage"></i>
+              <span>Specialūs pasiūlymai</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pizza.html">
+              <i class="fas fa-pizza-slice"></i>
+              <span>Picos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/wrappers.html">
+              <i class="fas fa-hotdog"></i>
+              <span>Suktinukai</span>
+            </a>
+          </li>
+          <li>
+            <a href="/drinks.html">
+              <i class="fas fa-wine-bottle"></i>
+              <span>Gėrimai</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="checkout-container">
+      <h1>🛒 Checkout</h1>
+
+      <div class="checkout-content">
+        <div class="checkout-left">
+          <h2>Jūsų užsakymas</h2>
+          <div id="cart-items" class="cart-items"></div>
+
+          <section id="upsell-section" class="upsell">
+            <h3>🥤 Gal norėtumėte pridėti prie savo užsakymo?</h3>
+            <div id="upsell-list" class="upsell-list"></div>
+          </section>
+        </div>
+        <div class="checkout-right">
+          <div class="billing-form">
+            <h2>Apmokėjimo informacija</h2>
+            <form id="billing-form">
+              <div class="form-group">
+                <label for="fullName">Pilnas vardas</label>
+                <input type="text" id="fullName" required />
+              </div>
+              <div class="form-group">
+                <label for="email">El. paštas</label>
+                <input type="email" id="email" required />
+              </div>
+              <div class="form-group">
+                <label for="address">Adresas</label>
+                <input type="text" id="address" required />
+              </div>
+              <div class="form-group">
+                <label for="city">Miestas</label>
+                <input type="text" id="city" required />
+              </div>
+              <div class="form-group">
+                <label for="postal">Pašto kodas</label>
+                <input type="text" id="postal" required />
+              </div>
+              <div class="form-group">
+                <label for="country">Šalis</label>
+                <input type="text" id="country" required />
+              </div>
+            </form>
+          </div>
+
+          <div class="order-summary">
+            <h3>Užsakymo suvestinė</h3>
+            <div class="summary-details">
+              <span>Iš viso:</span>
+              <span id="cart-total">€0.00</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn">
+              Tęsti apmokėjimą
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="pg-footer">
+      <footer class="footer">
+        <svg
+          class="footer-wave-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            class="footer-wave-path"
+            d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
+          ></path>
+        </svg>
+
+        <div class="footer-content">
+          <div class="footer-content-column">
+            <div class="footer-logo">
+              <a class="footer-logo-link" href="#">
+                <img
+                  class="logo-img"
+                  src="./img/ChatGPT_Image_Oct_10__2025__11_02_44_PM-removebg-preview.png"
+                  alt="pizza-logo"
+                  width="200"
+                />
+              </a>
+            </div>
+            <div class="footer-menu">
+              <h2 class="footer-menu-name">Pradžia</h2>
+              <ul id="menu-get-started" class="footer-menu-list">
+                <li><a href="/index.html">Pradėti</a></li>
+                <li><a href="#">Dokumentacija</a></li>
+                <li><a href="#">Diegimas</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-content-column">
+            <div class="footer-menu">
+              <h2 class="footer-menu-name">Įmonė</h2>
+              <ul id="menu-company" class="footer-menu-list">
+                <li><a href="/contact-us.html">Kontaktai</a></li>
+                <li><a href="/news.html">Naujienos</a></li>
+                <li><a href="/career.html">Karjera</a></li>
+              </ul>
+            </div>
+            <div class="footer-menu">
+              <h2 class="footer-menu-name">Teisinė informacija</h2>
+              <ul id="menu-legal" class="footer-menu-list">
+                <li><a href="#">Privatumo politika</a></li>
+                <li><a href="#">Naudojimo sąlygos</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-content-column">
+            <div class="footer-menu">
+              <h2 class="footer-menu-name">Greitos nuorodos</h2>
+              <ul id="menu-quick-links" class="footer-menu-list">
+                <li><a href="#">Pagalbos centras</a></li>
+                <li><a href="#">Paslaugų būsena</a></li>
+                <li><a href="#">Saugumas</a></li>
+                <li><a href="#">Tinklaraštis</a></li>
+                <li><a href="#">Klientai</a></li>
+                <li><a href="#">Atsiliepimai</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-content-column">
+            <div class="footer-call-to-action">
+              <h2 class="footer-call-to-action-title">Pabendraukime</h2>
+              <p class="footer-call-to-action-description">
+                Turite klausimų dėl pagalbos?
+              </p>
+              <a class="footer-call-to-action-button button" href="#"
+                >Susisiekite</a
+              >
+            </div>
+            <div class="footer-call-to-action">
+              <h2 class="footer-call-to-action-title">Skambinkite mums</h2>
+              <p class="footer-call-to-action-link-wrapper">
+                <a class="footer-call-to-action-link" href="tel:0124-64XXXX">
+                  0124-64XXXX
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-social-links">
+            <svg
+              class="footer-social-amoeba-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 236 54"
+            >
+              <path
+                class="footer-social-amoeba-path"
+                d="M223.06,43.32c-.77-7.2,1.87-28.47-20-32.53C187.78,8,180.41,18,178.32,20.7s-5.63,10.1-4.07,16.7-.13,15.23-4.06,15.91-8.75-2.9-6.89-7S167.41,36,167.15,33a18.93,18.93,0,0,0-2.64-8.53c-3.44-5.5-8-11.19-19.12-11.19a21.64,21.64,0,0,0-18.31,9.18c-2.08,2.7-5.66,9.6-4.07,16.69s.64,14.32-6.11,13.9S108.35,46.5,112,36.54s-1.89-21.24-4-23.94S96.34,0,85.23,0,57.46,8.84,56.49,24.56s6.92,20.79,7,24.59c.07,2.75-6.43,4.16-12.92,2.38s-4-10.75-3.46-12.38c1.85-6.6-2-14-4.08-16.69a21.62,21.62,0,0,0-18.3-9.18C13.62,13.28,9.06,19,5.62,24.47A18.81,18.81,0,0,0,3,33a21.85,21.85,0,0,0,1.58,9.08,16.58,16.58,0,0,1,1.06,5A6.75,6.75,0,0,1,0,54H236C235.47,54,223.83,50.52,223.06,43.32Z"
+              ></path>
+            </svg>
+
+            <a class="footer-social-link linkedin" href="#">
+              <span class="hidden-link-text">Linkedin</span>
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="footer-social-link twitter" href="#">
+              <span class="hidden-link-text">Twitter</span>
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="footer-social-link youtube" href="#">
+              <span class="hidden-link-text">YouTube</span>
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a class="footer-social-link github" href="#">
+              <span class="hidden-link-text">GitHub</span>
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="footer-copyright-wrapper">
+            <p class="footer-copyright-text">
+              <a class="footer-copyright-link" href="#">
+                Visos teisės saugomos.
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="/scripts/checkout.js"></script>
+    <script src="/scripts/nav.js"></script>
+  </body>
+</html>

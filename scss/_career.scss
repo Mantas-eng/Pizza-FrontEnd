@@ -1,0 +1,269 @@
+$brand-red: #c8102e;
+$muted: #f4f4f4;
+$text: #111;
+$shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+$pill-radius: 28px;
+
+:root {
+    --bg-url: url('');
+}
+
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.topbar {
+    background: $brand-red;
+    color: white;
+    padding: 14px 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-weight: 800;
+        letter-spacing: 1px;
+
+        span {
+            display: block;
+            font-weight: 600;
+            font-size: 12px;
+        }
+    }
+
+    .nav a {
+        color: rgba(255, 255, 255, 0.95);
+        text-decoration: none;
+        margin-left: 18px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+.career-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+
+    .hero {
+        width: 100%;
+        text-align: center;
+        padding: 40px 20px 10px;
+
+        .title {
+            font-size: 36px;
+            letter-spacing: 2px;
+            margin: 40px;
+        }
+    }
+
+    .content.container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1px;
+        max-width: 1100px;
+        margin: 10px auto 160px;
+        padding: 0px 40px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            top: 80px;
+            width: 300px;
+            height: 300px;
+            background-image: var(--bg-url);
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    }
+
+    .left {
+        flex: 1 1 400px;
+        min-width: 280px;
+        z-index: 1;
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .info {
+            margin-top: 12px;
+
+            li {
+                list-style: none;
+                margin-bottom: 6px;
+                color: #333;
+            }
+        }
+    }
+
+    .form-wrap {
+        flex: 1 1 420px;
+        min-width: 300px;
+        background: white;
+        border-radius: 18px;
+        padding: 26px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+        z-index: 2;
+
+        .application-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            .input-pill {
+
+                input,
+                textarea,
+                select {
+                    width: 100%;
+                    padding: 16px 20px;
+                    border-radius: 28px;
+                    border: none;
+                    background: #fafafa;
+                    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+                    font-size: 15px;
+                }
+
+                textarea {
+                    min-height: 90px;
+                    resize: vertical;
+                }
+            }
+
+            .btn-submit {
+                margin-top: 8px;
+                border-radius: 12px;
+                padding: 12px 18px;
+                background: $brand-red;
+                color: white;
+                font-weight: 700;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 6px 14px rgba(200, 16, 46, 0.18);
+                transition: all 0.2s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 18px rgba(200, 16, 46, 0.25);
+                }
+            }
+        }
+    }
+
+
+
+    @media (max-width: 1024px) {
+        .career-page .content.container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 24px;
+            padding: 20px;
+            margin: 0 auto 60px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .career-page .left {
+            max-width: 90%;
+            order: 1;
+        }
+
+        .career-page .form-wrap {
+            max-width: 90%;
+            width: 100%;
+            order: 2;
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .career-page .hero .title {
+            font-size: 28px;
+        }
+
+        .career-page .content.container {
+            padding: 10px;
+            margin: 0 auto 40px;
+        }
+
+        .career-page .form-wrap {
+            padding: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .career-page .input-pill input,
+        .career-page .input-pill textarea,
+        .career-page .input-pill select {
+            font-size: 14px;
+            padding: 12px 14px;
+        }
+
+        .career-page .btn-submit {
+            font-size: 14px;
+            padding: 10px 16px;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .career-page .hero .title {
+            font-size: 22px;
+            margin: 20px;
+        }
+
+        .career-page .content.container {
+            flex-direction: column;
+            gap: 16px;
+            padding: 10px;
+            margin: 0 auto 30px;
+        }
+
+        .career-page .left,
+        .career-page .form-wrap {
+            flex: 1 1 100%;
+            /* užima visą plotį */
+            min-width: unset;
+            max-width: 100%;
+            padding: 10px;
+        }
+
+        .career-page .input-pill input,
+        .career-page .input-pill textarea,
+        .career-page .input-pill select {
+            font-size: 13px;
+            padding: 10px 12px;
+        }
+
+        .career-page .btn-submit {
+            font-size: 13px;
+            padding: 8px 12px;
+        }
+    }
+
+}

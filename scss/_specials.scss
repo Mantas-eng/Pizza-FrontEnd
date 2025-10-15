@@ -1,0 +1,64 @@
+$primary: #e63946;
+$secondary: #ffba08;
+$bg: #f8f9fa;
+$card-bg: #fff;
+$shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+.specials {
+    background: linear-gradient(135deg, $primary, $secondary);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .specials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .special-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: left;
+        box-shadow: $shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, background 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            align-self: flex-start;
+            background: white;
+            color: $primary;
+            font-weight: bold;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+    }
+}

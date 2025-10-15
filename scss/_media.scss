@@ -1,0 +1,125 @@
+@media (max-width: 768px) {
+    .nav-link {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--primary-color1);
+        padding: 10px 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .nav-link.active {
+        display: block;
+    }
+
+    .nav-link li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 18px;
+    }
+
+    .action-buttons {
+        display: none;
+    }
+
+    .main-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .main-attributes .btn {
+        padding: 10px 20px;
+    }
+
+    .main-text .pizza-title {
+        font-size: 2.5em;
+    }
+
+    .main-text .pizza-subtitle {
+        font-size: 1.5em;
+    }
+
+    .main-pizza {
+        display: none;
+    }
+
+
+    .order_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order_section img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 10px;
+    }
+
+    .favorite_pizzas {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-link {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--primary-color1);
+        padding: 10px 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .main-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+
+    .main-text .pizza-title {
+        font-size: 2.5em;
+    }
+
+    .main-text .pizza-subtitle {
+        font-size: 1.5em;
+    }
+
+    .nav-link.active {
+        display: block;
+    }
+
+    .nav-link li {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .menu-toggle {
+        display: block;
+        width: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 10px;
+    }
+
+
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wrappers</title>
+    <link rel="stylesheet" href="/scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="/index.html" class="logo">
+          <img
+            class="logo-img"
+            src="./img/ChatGPT_Image_Oct_10__2025__11_02_44_PM-removebg-preview.png"
+            alt="pizza-logo"
+            width="200"
+          />
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-link">
+          <li><a href="contact-us.html">Kontaktai</a></li>
+          <li><a href="/news.html">Aktualijos</a></li>
+          <li><a href="/career.html">Karjera</a></li>
+          <li><a href="/information.html">Informacija</a></li>
+          <li><a href="/about-us.html">Apie mus</a></li>
+        </ul>
+        <div class="action-buttons">
+          <button id="cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+
+            <span id="cart-count" class="cart-count">0</span>
+          </button>
+          <button><i class="fas fa-bell"></i></button>
+        </div>
+      </nav>
+      <div class="bottom-nav">
+        <ul class="bottom-nav-items">
+          <li>
+            <a href="#specials">
+              <i class="fas fa-percentage"></i>
+              <span>Specialūs pasiūlymai</span>
+            </a>
+          </li>
+          <li>
+            <a href="/pizza.html">
+              <i class="fas fa-pizza-slice"></i>
+              <span>Picos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/wrappers.html">
+              <i class="fas fa-hotdog"></i>
+              <span>Suktinukai</span>
+            </a>
+          </li>
+          <li>
+            <a href="/drinks.html">
+              <i class="fas fa-wine-bottle"></i>
+              <span>Gėrimai</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="Wrappers-section">
+        <h2>🥙 Wrappers</h2>
+        <div id="wrap-list" class="wrap-grid">
+          <p>Kraunama...</p>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/wrappers.js"></script>
+    <script src="/scripts/nav.js"></script>
+  </body>
+</html>

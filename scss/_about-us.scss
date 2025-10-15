@@ -1,0 +1,111 @@
+.apie-mus-page {
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    background-color: #fff;
+
+    .hero {
+        position: relative;
+        background: linear-gradient(rgba(255, 98, 0, 0.6),
+                rgba(255, 98, 0, 0.6)),
+            url('../img/pizza-hero.jpg') center/cover no-repeat;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .about-section {
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            color: #ff5a00;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+    }
+
+    .info-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+
+        .card {
+            background: linear-gradient(135deg, #ff5a00, #ff9800);
+            color: white;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+                font-family: 'Lobster', cursive;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .cta-section {
+        text-align: center;
+        margin: 4rem 0;
+
+        a {
+            background: #ff5a00;
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+
+            &:hover {
+                background: #e04e00;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            height: 200px;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .info-cards {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+}
