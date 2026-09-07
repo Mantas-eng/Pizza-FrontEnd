@@ -2,13 +2,24 @@ function handleNavbarScroll() {
   const navbar = document.querySelector(".nav");
   if (!navbar) return;
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
+  const updateScrollState = () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  };
+  window.addEventListener("scroll", updateScrollState, { passive: true });
+  updateScrollState();
+
+  // Keep anchor targets visible below both rows, including wrapped mobile labels.
+  const header = navbar.closest("header");
+  if (header) {
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${header.getBoundingClientRect().height}px`
+      );
+    };
+    new ResizeObserver(updateHeaderHeight).observe(header);
+    updateHeaderHeight();
+  }
 }
 
 function handleMenuToggle() {
@@ -23,12 +34,14 @@ function handleMenuToggle() {
     navLinks.classList.add("active");
     toggleBtn.classList.add("active");
     toggleBtn.setAttribute("aria-expanded", "true");
+    toggleBtn.setAttribute("aria-label", "Užverti meniu");
   };
 
   const closeMenu = () => {
     navLinks.classList.remove("active");
     toggleBtn.classList.remove("active");
     toggleBtn.setAttribute("aria-expanded", "false");
+    toggleBtn.setAttribute("aria-label", "Atverti meniu");
   };
 
   toggleBtn.addEventListener("click", (e) => {
@@ -54,8 +67,13 @@ function handleMenuToggle() {
 
   // close on Escape
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
+    if (e.key === "Escape" && navLinks.classList.contains("active")) {
+      closeMenu();
+      toggleBtn.focus();
+    }
   });
+
+  window.matchMedia("(max-width: 1024px)").addEventListener("change", closeMenu);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

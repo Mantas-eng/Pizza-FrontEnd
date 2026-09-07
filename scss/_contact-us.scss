@@ -13,7 +13,6 @@ $background-color_6: #0056b3;
 $background-color_7: #f5f5f5;
 $background-color_8: var(--main-bg-color);
 
-
 body {
     font-family: $font-family_1;
 }
@@ -27,108 +26,11 @@ body {
     --font-size: 16px;
 }
 
-header {
-    background: url("/img/34.png") no-repeat center center;
-    background-size: cover;
-    min-height: 300px;
-    position: relative;
-    z-index: 9999;
-    height: 300px;
-    margin-bottom: 60px;
-
-    .logo-img {
-        width: 200px;
-    }
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: $color_1;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.bottom-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $background-color_1;
-    padding: 30px 20px;
-    margin-top: 40px;
-    border-top: 2px solid #333;
-}
-
-.bottom-nav-items {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-
-    li {
-        text-align: center;
-
-        a {
-            text-decoration: none;
-            color: $color_2;
-            font-size: 0.9rem;
-        }
-    }
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-
-    .nav-link {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        background-color: $background-color_2;
-        padding: 5px 12px;
-
-        li {
-            display: inline-block;
-
-            a {
-                display: block;
-                padding: 10px 12px;
-                text-decoration: none;
-                color: $color_1;
-                font-size: 20px;
-                min-width: 100px;
-                text-align: center;
-
-                &:hover {
-                    background-color: $background-color_3;
-                }
-            }
-        }
-    }
-
-    .action-buttons {
-        display: flex;
-        gap: 10px;
-
-        button {
-            background-color: $background-color_2;
-            border: none;
-            color: $color_3;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    }
-}
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: auto;
     gap: 50px;
 }
 
@@ -168,6 +70,7 @@ img {
 }
 
 .contact {
+    padding: 40px 0;
     .container {
         display: flex;
         flex-direction: column;
@@ -250,4 +153,20 @@ img {
         color: $color_4;
         cursor: pointer;
     }
+}
+
+.contact .container,
+.location .container,
+.social .container {
+    height: auto;
+    min-width: 0;
+}
+
+.form-control {
+    width: 100%;
+    min-width: 0;
+}
+
+textarea.form-control {
+    resize: vertical;
 }

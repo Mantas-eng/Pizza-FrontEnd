@@ -11,7 +11,8 @@ $pill-radius: 28px;
 
 html,
 body {
-    overflow-x: hidden;
+    // Clip horizontal animation overflow without creating a sticky scroll container.
+    overflow-x: clip;
 }
 
 .topbar {
@@ -71,16 +72,18 @@ body {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 1px;
+        gap: 32px;
+        width: 100%;
+        height: auto;
         max-width: 1100px;
-        margin: 10px auto 160px;
+        margin: 24px auto 48px;
         padding: 0px 40px;
         position: relative;
 
         &::after {
             content: "";
             position: absolute;
-            right: -40px;
+            right: 0;
             top: 80px;
             width: 300px;
             height: 300px;
@@ -94,7 +97,7 @@ body {
 
     .left {
         flex: 1 1 400px;
-        min-width: 280px;
+        min-width: 0;
         z-index: 1;
 
         h2 {
@@ -121,7 +124,7 @@ body {
 
     .form-wrap {
         flex: 1 1 420px;
-        min-width: 300px;
+        min-width: 0;
         background: white;
         border-radius: 18px;
         padding: 26px;
@@ -144,7 +147,7 @@ body {
                     border: none;
                     background: #fafafa;
                     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
-                    font-size: 15px;
+                    font-size: 16px;
                 }
 
                 textarea {
@@ -176,7 +179,7 @@ body {
 
 
     @media (max-width: 1024px) {
-        .career-page .content.container {
+        .content.container {
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -190,13 +193,15 @@ body {
             }
         }
 
-        .career-page .left {
-            max-width: 90%;
+        .left {
+            max-width: 100%;
+            flex: 0 1 auto;
             order: 1;
         }
 
-        .career-page .form-wrap {
-            max-width: 90%;
+        .form-wrap {
+            max-width: 100%;
+            flex: 0 1 auto;
             width: 100%;
             order: 2;
             margin-top: 10px;
@@ -204,48 +209,48 @@ body {
     }
 
     @media (max-width: 600px) {
-        .career-page .hero .title {
+        .hero .title {
             font-size: 28px;
         }
 
-        .career-page .content.container {
+        .content.container {
             padding: 10px;
             margin: 0 auto 40px;
         }
 
-        .career-page .form-wrap {
+        .form-wrap {
             padding: 18px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .career-page .input-pill input,
-        .career-page .input-pill textarea,
-        .career-page .input-pill select {
-            font-size: 14px;
+        .input-pill input,
+        .input-pill textarea,
+        .input-pill select {
+            font-size: 16px;
             padding: 12px 14px;
         }
 
-        .career-page .btn-submit {
+        .btn-submit {
             font-size: 14px;
             padding: 10px 16px;
         }
     }
 
     @media (max-width: 414px) {
-        .career-page .hero .title {
+        .hero .title {
             font-size: 22px;
             margin: 20px;
         }
 
-        .career-page .content.container {
+        .content.container {
             flex-direction: column;
             gap: 16px;
             padding: 10px;
             margin: 0 auto 30px;
         }
 
-        .career-page .left,
-        .career-page .form-wrap {
+        .left,
+        .form-wrap {
             flex: 1 1 100%;
             /* užima visą plotį */
             min-width: unset;
@@ -253,14 +258,14 @@ body {
             padding: 10px;
         }
 
-        .career-page .input-pill input,
-        .career-page .input-pill textarea,
-        .career-page .input-pill select {
-            font-size: 13px;
+        .input-pill input,
+        .input-pill textarea,
+        .input-pill select {
+            font-size: 16px;
             padding: 10px 12px;
         }
 
-        .career-page .btn-submit {
+        .btn-submit {
             font-size: 13px;
             padding: 8px 12px;
         }
