@@ -1,12 +1,6 @@
-function handleNavbarScroll() {
+function trackHeaderHeight() {
   const navbar = document.querySelector(".nav");
   if (!navbar) return;
-
-  const updateScrollState = () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-  };
-  window.addEventListener("scroll", updateScrollState, { passive: true });
-  updateScrollState();
 
   // Keep anchor targets visible below both rows, including wrapped mobile labels.
   const header = navbar.closest("header");
@@ -77,6 +71,6 @@ function handleMenuToggle() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  handleNavbarScroll();
+  trackHeaderHeight();
   handleMenuToggle();
 });
